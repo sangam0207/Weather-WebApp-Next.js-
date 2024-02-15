@@ -1,5 +1,16 @@
 import "@/styles/globals.css";
+import 'bootstrap/dist/css/bootstrap.css'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+// pages/_app.js
+
+import WeatherContextProvider from '../contexts/WeatherContext';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <WeatherContextProvider>
+      <Component {...pageProps} />
+    </WeatherContextProvider>
+  );
 }
+
+export default MyApp;
